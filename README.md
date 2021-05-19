@@ -2,7 +2,7 @@
 
 A triangle carousel custom with carousel_slider package
 
-- Package I use here [Flutter package] https://pub.dev/packages/carousel_slider 
+- Package I use here https://pub.dev/packages/carousel_slider 
 
 ## Getting Started
 
