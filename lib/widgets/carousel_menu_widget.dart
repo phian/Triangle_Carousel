@@ -11,14 +11,12 @@ class CarouselMenuWidget extends StatefulWidget {
   final double carouselOptionHeight;
   final double? viewportFraction;
   final bool? enlargeCenterPage;
-  final bool isInitedPadding;
 
   const CarouselMenuWidget({
     Key? key,
     required this.items,
     required this.initPage,
     required this.carouselOptionHeight,
-    required this.isInitedPadding,
     this.viewportFraction,
     this.onPageChange,
     this.onScroll,
