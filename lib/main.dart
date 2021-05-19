@@ -22,10 +22,19 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int currentCenterIndex = 2;
+  bool _isFinishedInitPadding = false;
 
   @override
   void initState() {
     super.initState();
+    updateIsInit();
+  }
+
+  Future updateIsInit() async {
+    await Future.delayed(Duration(milliseconds: 200));
+    setState(() {
+      _isFinishedInitPadding = true;
+    });
   }
 
   @override
@@ -54,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
             });
           },
           containerHeight: MediaQuery.of(context).size.height,
+          isFinishedInitPadding: _isFinishedInitPadding,
         ),
       ),
     );

@@ -1,5 +1,4 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dosiin_scroll_demo/widgets/menu_item.dart';
 import 'package:flutter/material.dart';
 
 class CarouselMenuWidget extends StatefulWidget {
@@ -11,12 +10,14 @@ class CarouselMenuWidget extends StatefulWidget {
   final double carouselOptionHeight;
   final double? viewportFraction;
   final bool? enlargeCenterPage;
+  final bool isFinishedInitPadding;
 
   const CarouselMenuWidget({
     Key? key,
     required this.items,
     required this.initPage,
     required this.carouselOptionHeight,
+    required this.isFinishedInitPadding,
     this.viewportFraction,
     this.onPageChange,
     this.onScroll,
@@ -30,18 +31,7 @@ class CarouselMenuWidget extends StatefulWidget {
 }
 
 class _CarouselSlideMenuWidgetState extends State<CarouselMenuWidget> {
-  bool _isInitedPadding = false;
 
-  @override
-  void initState() {
-    super.initState();
-
-    Future.delayed(Duration(milliseconds: 100), () {
-      setState(() {
-        _isInitedPadding = true;
-      });
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +39,7 @@ class _CarouselSlideMenuWidgetState extends State<CarouselMenuWidget> {
       height: widget.containerHeight ?? 300.0,
       child: AnimatedOpacity(
         duration: Duration(milliseconds: 200),
-        opacity: _isInitedPadding ? 1 : 0,
+        opacity: widget.isFinishedInitPadding ? 1 : 0,
         child: CarouselSlider(
           items: widget.items,
           options: CarouselOptions(
