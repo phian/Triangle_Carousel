@@ -31,8 +31,6 @@ class CarouselMenuWidget extends StatefulWidget {
 }
 
 class _CarouselSlideMenuWidgetState extends State<CarouselMenuWidget> {
-
-
   @override
   Widget build(BuildContext context) {
     return Container(
