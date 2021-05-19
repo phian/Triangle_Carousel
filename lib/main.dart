@@ -1,5 +1,5 @@
+import 'package:dosiin_scroll_demo/widgets/carousel_menu_item.dart';
 import 'package:dosiin_scroll_demo/widgets/carousel_menu_widget.dart';
-import 'package:dosiin_scroll_demo/widgets/menu_item.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
           items: [
             ...List.generate(
               100,
-              (index) => MenuItem(
+                  (index) => CarouselMenuItem(
                 key: ValueKey(index),
                 index: index,
                 isCenter: currentCenterIndex == index,
@@ -64,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
           },
           containerHeight: MediaQuery.of(context).size.height,
           isFinishedInitPadding: _isFinishedInitPadding,
+          viewportFraction: 0.23,
         ),
       ),
     );

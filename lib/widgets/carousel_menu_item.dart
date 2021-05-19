@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class MenuItem extends StatefulWidget {
+class CarouselMenuItem extends StatefulWidget {
   final int index;
   final bool isCenter;
 
-  const MenuItem({
+  const CarouselMenuItem({
     Key? key,
     required this.index,
     required this.isCenter,
   }) : super(key: key);
 
   @override
-  _MenuItemState createState() => _MenuItemState();
+  _CarouselMenuItemState createState() => _CarouselMenuItemState();
 }
 
-class _MenuItemState extends State<MenuItem> {
+class _CarouselMenuItemState extends State<CarouselMenuItem> {
   final key = GlobalKey();
   double paddingBottom = 0, paddingTop = 0;
 

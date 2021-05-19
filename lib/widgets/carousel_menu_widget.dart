@@ -1,8 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dosiin_scroll_demo/widgets/carousel_menu_item.dart';
 import 'package:flutter/material.dart';
 
 class CarouselMenuWidget extends StatefulWidget {
-  final List<Widget> items;
+  final List<CarouselMenuItem> items;
   final Function(int index, CarouselPageChangedReason reason)? onPageChange;
   final Function(double? offset)? onScroll;
   final int initPage;
@@ -42,7 +43,7 @@ class _CarouselSlideMenuWidgetState extends State<CarouselMenuWidget> {
           items: widget.items,
           options: CarouselOptions(
             height: widget.carouselOptionHeight,
-            viewportFraction: widget.viewportFraction ?? 0.23,
+            viewportFraction: widget.viewportFraction ?? 1.0,
             initialPage: widget.initPage,
             enableInfiniteScroll: true,
             enlargeCenterPage: widget.enlargeCenterPage ?? false,
